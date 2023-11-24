@@ -1,0 +1,11 @@
+@import "./../../assets/colors/color.scss";
+@import "./../../assets/fonts/index.scss";
+
+.navigation {
+    
+    &__links {
+        display: flex;
+        list-style: none;
+        position: absolute;
+    }
+}

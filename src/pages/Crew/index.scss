@@ -1,0 +1,18 @@
+@import "./../../assets/colors/color.scss";
+@import "./../../assets/fonts/index.scss";
+
+.crew {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &_background-img {
+      background-image: url(./../../assets/images/background-crew-desktop.jpg);
+    }
+  
+    &__info {
+      padding-top: 50px;
+    }
+  }
