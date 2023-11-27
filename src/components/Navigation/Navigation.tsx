@@ -1,13 +1,16 @@
 import * as React from "react";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { setActiveLink } from "../../redux/reducers/slice";
+import { RootState } from "redux/store";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
 const Navigation = () => {
-  const [activeLink, setActiveLink] = useState(window.location.pathname);
+  const dispatch = useDispatch();
+  const activeLink = useSelector((state: RootState) => state.app.activeLink);
 
   const handleLinkClick = (path: string) => {
-    setActiveLink(path);
+    dispatch(setActiveLink(path));
   };
 
   return (

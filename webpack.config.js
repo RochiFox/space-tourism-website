@@ -58,9 +58,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.(js|tsx|jsx)$/,
+        test: /\.(js|tsx|jsx|ts)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: [
+          "babel-loader",
+          {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: true, // Добавлено
+            },
+          },
+        ],
       },
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
@@ -130,6 +138,6 @@ module.exports = {
   ].concat(htmlPluginEntries),
   target: "web",
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
 };
