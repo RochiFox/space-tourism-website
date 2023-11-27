@@ -13,6 +13,56 @@
   }
 
   &__info {
-    padding-top: 50px;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 40%;
+    left: 165px;
+  }
+
+  &__text {
+    width: 445px;
+  }
+
+  &__pretitle {
+    color: $lightBlue;
+    font-family: "BarlowCondensed", sans-serif;
+    text-transform: uppercase;
+    font-size: 28px;
+    letter-spacing: 4.72px;
+  }
+
+  &__title {
+    color: $white;
+    font-family: "Bentham", serif;
+    text-transform: uppercase;
+    font-size: 150px;
+    padding: 24px 0 16px 0;
+  }
+
+  &__subtitle {
+    color: $lightBlue;
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  &__explore-btn {
+    width: 274px;
+    height: 274px;
+    border-radius: 100%;
+    color: $darkBlue;
+    background-color: $white;
+    font-family: "Bentham", serif;
+    text-transform: uppercase;
+    font-size: 32px;
+    letter-spacing: 2px;
+    border: none;
+    margin-top: 100px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
