@@ -5,7 +5,7 @@ interface AppState {
 }
 
 const initialState: AppState = {
-  activeLink: window.location.pathname,
+  activeLink: localStorage.getItem("activeLink") || window.location.pathname,
 };
 
 const appSlice = createSlice({
@@ -14,6 +14,7 @@ const appSlice = createSlice({
   reducers: {
     setActiveLink: (state, action: PayloadAction<string>) => {
       state.activeLink = action.payload;
+      localStorage.setItem("activeLink", action.payload);
     },
   },
 });
