@@ -1,7 +1,6 @@
 /**
  * Webpack main configuration file
  */
-
 const path = require("path");
 const fs = require("fs");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -65,7 +64,7 @@ module.exports = {
           {
             loader: "ts-loader",
             options: {
-              transpileOnly: true, // Добавлено
+              transpileOnly: true,
             },
           },
         ],
@@ -134,6 +133,9 @@ module.exports = {
     new CleanWebpackPlugin({
       verbose: true,
       cleanOnceBeforeBuildPatterns: ["**/*", "!stats.json"],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/public", to: "public" }],
     }),
   ].concat(htmlPluginEntries),
   target: "web",
