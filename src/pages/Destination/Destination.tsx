@@ -8,8 +8,11 @@ const Destination = () => {
     data.destinations[0]
   );
 
-  const handleButtonClick = (destinationIndex: number) => {
+  const [activeButton, setActiveButton] = useState(0);
+
+  const handleButtonClick = (destinationIndex: number, index: number) => {
     setSelectedDestination(data.destinations[destinationIndex]);
+    setActiveButton(index);
   };
 
   return (
@@ -28,7 +31,13 @@ const Destination = () => {
           <div className="destination__text">
             <div className="destination__buttons">
               {data.destinations.map((destination, index) => (
-                <button key={index} onClick={() => handleButtonClick(index)}>
+                <button
+                  key={index}
+                  onClick={() => handleButtonClick(index, index)}
+                  className={`destination__btn ${
+                    activeButton == index ? "active" : ""
+                  }`}
+                >
                   {destination.name}
                 </button>
               ))}
@@ -41,13 +50,13 @@ const Destination = () => {
             <div className="destination__distance-block">
               <div className="destination__distance">
                 <p className="destination__distance-title">avg. distance</p>
-                <h4 className="destination__distance-info">
+                <h4 className="destination__distance-subtitle">
                   {selectedDestination.distance}
                 </h4>
               </div>
-              <div className="destination__travel">
-                <p className="destination__travel-title">est. travel time</p>
-                <h4 className="destination__travel-info">
+              <div className="destination__distance">
+                <p className="destination__distance-title">est. travel time</p>
+                <h4 className="destination__distance-subtitle">
                   {selectedDestination.travel}
                 </h4>
               </div>
