@@ -24,8 +24,12 @@ const Home = () => {
             world experience!
           </p>
         </div>
-        <Link to="/destination" onClick={() => handleLinkClick("/destination")}>
-          <button className="home__explore-btn">Explore</button>
+        <Link
+          to="/destination"
+          onClick={() => handleLinkClick("/destination")}
+          className="home__explore-link"
+        >
+          Explore
         </Link>
       </div>
     </div>
