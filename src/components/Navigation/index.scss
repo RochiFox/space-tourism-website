@@ -81,3 +81,32 @@
     font-weight: bold;
   }
 }
+
+/* Adaptive */
+@media (max-width: 1450px) {
+  .navigation {
+
+    &__line {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1160px) {
+  .navigation {
+    margin-top: 0;
+
+    &__links {
+      padding: 0 48px;
+      width: 350px;
+    }
+
+    &__link {
+      font-size: 14px;
+    }
+
+    &__bold-link {
+      display: none;
+    }
+  }
+}
