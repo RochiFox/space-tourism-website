@@ -71,3 +71,48 @@
     }
   }
 }
+
+/* Adaptive */
+@media (max-width: 1160px) {
+  .home {
+    &_background-img {
+      background-image: url(./../../assets/images/background-home-tablet.jpg);
+    }
+
+    &__info {
+      display: block;
+      top: 15%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    &__text {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    &__pretitle {
+      font-size: 20px;
+    }
+
+    &__title {
+      padding: 24px 0;
+    }
+    
+    &__subtitle {
+      font-size: 16px;
+    }
+
+    &__explore-link {
+      width: 120px;
+      height: 120px;
+      margin: 80px auto 0;
+
+      &:hover {
+        box-shadow: 0 0 1px 60px rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+
+
+}
