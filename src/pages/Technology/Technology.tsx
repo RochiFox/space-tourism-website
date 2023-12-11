@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import data from "../../assets/data/data.json";
 import "./index.scss";
 
@@ -9,6 +9,20 @@ const Technology = () => {
   );
 
   const [activeButton, setActiveButton] = useState(0);
+
+  const [isPortrair, setIsPortrait] = useState(window.innerWidth < 1161);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPortrait(window.innerWidth < 1161);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleButtonClick = (technologyIndex: number, index: number) => {
     setSelectedTechnology(data.technology[technologyIndex]);
@@ -43,7 +57,11 @@ const Technology = () => {
             </p>
           </div>
           <img
-            src={selectedTechnology["image-portrait"]}
+            src={
+              selectedTechnology[
+                isPortrair ? "image-landscape" : "image-portrait"
+              ]
+            }
             alt={selectedTechnology.name}
             className="technology__image"
           />
