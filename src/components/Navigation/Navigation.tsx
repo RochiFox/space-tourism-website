@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { setActiveLink } from "../../redux/reducers/slice";
 import { RootState } from "redux/store";
@@ -6,11 +7,17 @@ import { Link } from "react-router-dom";
 import "./index.scss";
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const dispatch = useDispatch();
   const activeLink = useSelector((state: RootState) => state.app.activeLink);
 
   const handleLinkClick = (path: string) => {
     dispatch(setActiveLink(path));
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -70,6 +77,61 @@ const Navigation = () => {
             </Link>
           </li>
         </ul>
+      </div>
+
+      <div className="navigation__menu-block">
+        <button className="navigation__burger-btn" onClick={toggleMenu}>
+          <span
+            className={`navigation__burger-line ${isMenuOpen ? "open" : ""}`}
+          />
+          <span
+            className={`navigation__burger-line ${isMenuOpen ? "open" : ""}`}
+          />
+          <span
+            className={`navigation__burger-line ${isMenuOpen ? "open" : ""}`}
+          />
+        </button>
+
+        {isMenuOpen && (
+          <ul className="navigation__mobile-menu">
+            <li>
+              <Link
+                to="/"
+                className="navigation__menu-link"
+                onClick={() => handleLinkClick("/")}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/destination"
+                className="navigation__menu-link"
+                onClick={() => handleLinkClick("/destination")}
+              >
+                Destination
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/crew"
+                className="navigation__menu-link"
+                onClick={() => handleLinkClick("/crew")}
+              >
+                Crew
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/technology"
+                className="navigation__menu-link"
+                onClick={() => handleLinkClick("/technology")}
+              >
+                Technology
+              </Link>
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
   );
