@@ -113,6 +113,37 @@
       }
     }
   }
+}
 
+@media (max-width: 680px) {
+  .home {
 
+    &__info {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .home {
+
+    &__text {
+      width: 320px;
+    }
+
+    &__pretitle {
+      font-size: 16px;
+      letter-spacing: 2.7px;
+    }
+
+    &__title {
+      font-size: 80px;
+    }
+
+    &__explore-link {
+      padding: 40px;
+      font-size: 24px;
+      margin: 100px auto 0;
+    }
+  }
 }
