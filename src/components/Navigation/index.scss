@@ -135,17 +135,17 @@
 
   &__mobile-menu {
     list-style: none;
-    padding: 100px 0;
+    padding: 80px 0 50px;
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     width: 50%;
     height: 240px;
     text-align: center;
     z-index: 2;
-    overflow: hidden;
+    border-radius: 0 0 0 50px;
   }
 
   &__mobile-menu li {
@@ -153,7 +153,7 @@
   }
 
   &__mobile-menu a {
-    color: $lightGray;
+    color: $veryLightGray;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;

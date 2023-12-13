@@ -93,14 +93,14 @@ const Navigation = () => {
         </button>
 
         {isMenuOpen && (
-          <ul className="navigation__mobile-menu">
+          <ul className={`navigation__mobile-menu ${isMenuOpen ? 'open' : ''}`}>
             <li>
               <Link
                 to="/"
                 className="navigation__menu-link"
                 onClick={() => handleLinkClick("/")}
               >
-                Home
+                00 Home
               </Link>
             </li>
             <li>
@@ -109,7 +109,7 @@ const Navigation = () => {
                 className="navigation__menu-link"
                 onClick={() => handleLinkClick("/destination")}
               >
-                Destination
+                01 Destination
               </Link>
             </li>
             <li>
@@ -118,7 +118,7 @@ const Navigation = () => {
                 className="navigation__menu-link"
                 onClick={() => handleLinkClick("/crew")}
               >
-                Crew
+                02 Crew
               </Link>
             </li>
             <li>
@@ -127,7 +127,7 @@ const Navigation = () => {
                 className="navigation__menu-link"
                 onClick={() => handleLinkClick("/technology")}
               >
-                Technology
+                03 Technology
               </Link>
             </li>
           </ul>
