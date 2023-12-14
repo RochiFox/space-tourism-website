@@ -196,3 +196,50 @@
     }
   }
 }
+
+@media (max-width: 680px) {
+  .crew {
+    &__block-title {
+      text-align: center;
+    }
+
+    &__info {
+      margin: 100px auto 0;
+    }
+
+    &__text {
+      width: 327px;
+      margin-top: 320px;
+    }
+
+    &__subtitle {
+      width: 100%;
+      height: 100%;
+      max-height: 150px;
+    }
+
+    &__pretitle {
+      font-size: 16px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__image {
+      top: 0;
+      height: 220px;
+      width: 178px;
+      padding: 0 40px;
+      border-bottom: 2px solid $veryDarkGray;
+    }
+
+    &__buttons {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: 10px;
+    }
+  }
+}
