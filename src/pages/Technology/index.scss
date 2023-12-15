@@ -126,7 +126,6 @@
 @media (max-width: 1160px) {
   .technology {
     &_background-img {
-      padding-bottom: 10%;
       background-image: url(./../../assets/images/background-technology-tablet.jpg);
     }
 
@@ -147,13 +146,13 @@
 
     &__image {
       width: 80%;
-      height: 310px;
+      height: 260px;
       margin: 0 auto;
     }
 
     &__block-buttons {
       position: absolute;
-      top: 35%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, 0);
       flex-direction: row;
