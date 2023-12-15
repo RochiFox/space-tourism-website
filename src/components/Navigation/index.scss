@@ -135,21 +135,23 @@
 
   &__mobile-menu {
     list-style: none;
-    padding: 80px 0 50px;
     position: absolute;
     top: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    width: 50%;
-    height: 240px;
-    text-align: center;
+    width: 45%;
+    height: 100vh;
+    padding-left: 50px;
     z-index: 2;
-    border-radius: 0 0 0 50px;
   }
 
   &__mobile-menu li {
     padding: 20px 0;
+
+    &:first-child {
+      padding: 150px 0 20px;
+    }
   }
 
   &__mobile-menu a {
@@ -203,6 +205,14 @@
       display: flex;
       align-items: center;
       width: 32px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .navigation {
+    &__mobile-menu {
+      width: 60%;
     }
   }
 }
